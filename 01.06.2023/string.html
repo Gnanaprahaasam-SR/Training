@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String formate</title>
+</head>
+<body>
+    <div>
+        <h2>Byte Converter</h2><br>
+        <table>
+            <tr>
+                <td>Enter the string</td>
+                <td><input type="text" id="text" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="convert" onclick="convertByte()" ></td>
+            </tr>
+        </table><br>
+        <p class="value"></p>
+    </div>
+    <div>
+        <h2>Encryption of the Data</h2><br>
+        <tr>
+            <td>Enter the data</td>
+            <td><textarea name="arear" id="input" cols="18" rows="4"></textarea></td>
+        </tr><br>
+        <tr>
+            <td></td>
+            <td><input type="submit" id="" value="Encrypt"></td>
+        </tr>
+    </div>
+    <div>
+        <center>
+            <h2>Validating Alphabets</h2><br>
+            <p>Enter your text to validate</p>
+            <textarea name="camel" id="content" cols="18" rows="4" ></textarea><br>
+            <input type="submit" id="validate" value="Validate Alphabets" onclick="validate()"><br>
+            
+            <p id="result"></p>
+        </center>
+    </div>
+    <div>
+        
+        <h2>Camel Case convertor</h2><br>
+        <p>Enter your text to test cases</p>
+        <textarea name="camel" id="convert" cols="18" rows="4" ></textarea><br>
+        <input type="submit" id="validate" value="Camel case convertor" onclick="convertor()"><br>
+        <div id="output"></div><br>
+        
+        
+    </div>
+    
+</body>
+<script>
+    {
+        function convertByte(){
+            let number="";
+            let string = String(document.getElementById("text").value);
+            
+            for(let i=1; i<string.length;i++)
+            {
+                number = number+String(string.charCodeAt(i));                
+            }
+            document.getElementsByClassName("value")[0].innerHTML= "The converted value is "+number;
+        }
+
+        function validate(){
+            let textbox = String(document.getElementById("content").value);
+            let re = new RegExp("^()$");
+            if(textbox.match(/[a-z A-Z]/g) && !textbox.match(/[0-9 @#$%^&*!]/g))
+            {
+                document.getElementById("result").innerHTML="Entered text contains only alphabets";
+            }
+            else{
+                document.getElementById("result").innerHTML="Entered text doesn't contains only alphabets";
+            }
+
+
+        }
+        function convertor(){
+            let input = String(document.getElementById("convert").value);
+            let index = input.split(" ");
+            console.log(index);
+            let value="";
+            for(let i=0; i<index.length; i++)
+            {
+                let Temp = String(index[i]);
+                
+                let final = String((Temp.charAt(0).toUpperCase()).concat(Temp.substring(1,)));
+                value =value.concat(" ",final); 
+            }
+            document.getElementById("output").innerHTML = value;
+        }
+    }
+</script>
+</html>

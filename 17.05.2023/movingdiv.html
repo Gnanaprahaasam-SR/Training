@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Div</title>
+</head>
+<body>
+    <center>
+        <h2>Moving div content</h2>
+        <div style=" width: 20%;">
+            <p id="welcome" style="background-color: lightseagreen;">Welcome!!</p>
+        </div>
+        <input type="submit" id="submit" value="Click me" onclick="display()">
+        <div style=" width: 20%; ">
+            <p id="welcome1" style="background-color: rgb(211, 67, 185); border: 1px;"></p>
+        </div>
+    </center>
+
+    
+</body>
+<script>
+    {
+        function display()
+        {
+            let value = document.getElementById("welcome");
+            console.log(value.innerHTML);
+            document.getElementById("welcome1").innerHTML= value.innerHTML;
+            document.getElementById("welcome").innerHTML= "";
+             
+        }
+        
+    }
+</script>
+</html>

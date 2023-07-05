@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>control structure</title>
+</head>
+<body>
+    <center>
+        <div>
+            <h1>Marriage Validator</h1>
+            <tr>
+                <td>Bride's Age:</td>
+                <td><input type="number" id="brideAge" required></td>
+            </tr><br><br>
+            <tr>
+                <td>Groom's Age:</td>
+                <td><input type="number" id="groomAge" required></td>
+            </tr><br><br>
+            <tr>
+                <td></td>
+                <td><input type="submit" id="validate" value="validate" onclick="validate()"></td>
+            </tr><br><br>
+            <p id="result"></p>
+        </div>
+
+        <div>
+            <h1>Generate Multiplication Tables</h1><br>
+            <label for="number">Number </label><input type="number" id="number" required><br><br>
+            <input type="submit" id="generate" value="Generate" onclick="multi(1)">
+            <div id="result1">
+            </div>
+        </div><br><br>
+    
+        <div >
+            <h2>Event count for a month</h2>
+            <table >
+                <tr>                
+                    <td>Birthday party event:</td>
+                    <td><input type="number" id="event1" required></td>
+                </tr>
+                <tr>
+                    <td>Engagement parties event:</td>
+                    <td><input type="number" id="event2" required></td>
+                </tr>
+                <tr>
+                    <td>Wedding ceremony:</td>
+                    <td><input type="number" id="event3" required></td>
+                </tr>
+                <tr>
+                    <td>Wedding reception event:</td>
+                    <td><input type="number" id="event4" required></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit" id="button" onclick="maxevent()">
+            <br><p id="count"></p>
+        </div>
+    </center>
+    
+    
+</body>
+<script>
+    {
+        function validate (){
+            let bride = document.getElementById("brideAge").value;
+            let groom = document.getElementById("groomAge").value;
+            
+            if(bride >=18 && groom >=21)
+            {
+                document.getElementById('result').innerHTML = "Valid Marriage";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML = "InValid Marriage";
+            }
+        }
+                    
+        function multi () {
+            let count = 1;
+            let number= document.getElementById("number").value;
+            console.log(number);
+            for(count;count<=10;count++)
+            {
+                let output = count*Number(number); 
+                document.getElementById("result1").innerHTML = count+"*"+number+"="+output ;
+            }                          
+        }    
+        
+        function maxevent()
+        {
+            const event1 = Number(document.getElementById("event1").value);
+            const event2 = Number(document.getElementById("event2").value);
+            const event3 = Number(document.getElementById("event3").value);
+            const event4 = Number(document.getElementById("event4").value);
+
+            let finalValue;
+            if(event1>event2 && event1>event3 && event1>event4)
+            {
+                finalValue = "Birthday party event";
+            }
+            else if(event2>event1 && event2>event3 && event2>event4)
+            {
+                finalValue = "Engagement parties event";
+            }
+            else if(event3>event1 && event3>event2 && event3>event4)
+            {
+                finalValue = "Wedding ceemony";
+            }
+            else 
+            {
+                finalValue = "Wedding reception event";
+            }
+            document.getElementById("count").innerHTML = "Maximmum number of event occurred in this month is "+finalValue;
+        }
+
+        let num1 = parseInt( window.prompt("Input the First integer"));
+        let num2 = parseInt( window.prompt("Input the second integer"));
+
+       if(num1>num2)
+       {
+        console.log("the larger of"+num1+"and"+num2+"is"+num1);
+       }
+       else if(num1<num2)
+       {
+        console.log("the larger of"+num1+"and"+num2+"is"+num2);
+       }
+       else{
+        console.log("the value"+num1+"and"+num2+"both are equal");
+
+       }
+
+       var x=0;
+       var y=-1;
+       var z=4;
+
+       if(x>y && x>z)
+       {
+        if(y>z)
+        {
+            console.log(x+","+y+","+z);
+        }
+        else{
+            console.log(x+","+z+","+y);
+        }
+        
+       }
+       else if(y>x && y>z)
+       {
+        if(x>z)
+        {
+            console.log(y+","+x+","+z);
+        }
+        else{
+            console.log(y+","+z+","+x);
+        }
+       }
+       else if(z>x && z>y)
+       {
+        if(x>y)
+        {
+            console.log(z+","+x+","+y);
+        }
+        else{
+            console.log(z+","+y+","+x);
+        }
+       }
+    }
+</script>
+</html>

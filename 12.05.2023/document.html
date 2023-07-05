@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body onload="alert('page is successfully loaded');">
+    
+    <h3 id="msg"></h3> 
+    <p class="welcome"></p>
+    <p onmouseover="italic()" onmouseout="normal()"></p>
+    <span>TNXT indian private limited</span>
+    <br>
+    <input type="text" name="name" id="name" onfocus="focus(this)" onchange="upperCase()">
+    <br><br>
+    <input type="submit" class="time" onmousedown="timeRequire()" onmouseup="timeDisplay()" value="Time please!">
+
+    <!-- event function-->
+    <center>
+        <input type="submit" name="view" id="submit" onclick="show()">
+        
+    </center>
+   
+   
+    <script type="text/javascript">
+        // Finding HTML Element:
+        document.getElementById("msg").innerHTML="Hello world";
+        document.getElementsByClassName("welcome")[0].innerHTML="Welcome You All!";
+        document.getElementsByTagName("p")[1].innerHTML="Have a palcentday";
+
+
+
+        
+        //  onclick() event function.
+        function show()
+        {
+            const value = document.getElementsByTagName("span")[0].style.color="red";
+        }
+
+        // onmouseover() event function.  onmouseout() event function.
+        function italic()
+        {
+            document.getElementsByTagName("p")[1].style.fontStyle = "italic";            
+        }
+        function  normal()
+        {
+            document.getElementsByTagName("p")[1].style.fontStyle = "normal";
+        }
+
+        //Onfocus() event function.
+        function focus(element)
+        {
+            element.style.background="yellow";
+        }
+
+        //onchange() event function.
+        function upperCase()
+        {
+            const upper = document.getElementById("name");
+            upper.value = upper.value.toUpperCase();
+        }
+
+        //onmousedown() onmouseup().
+        function timeDisplay()
+        {
+            const time =document.getElementById("time");
+            time.value=Date();
+        }
+        function timeRequire()
+        {
+            const time = document.getElementById("time");
+            time.value="Time please";
+        }
+    </script>
+</body>
+</html>

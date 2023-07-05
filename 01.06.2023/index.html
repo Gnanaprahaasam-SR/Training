@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular-Experssion</title>
+</head>
+<body>
+    <div>
+        <h1>Registration Page</h1><br>
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" id="name" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password" required></td>
+                <td id="pass" style="color: red;"></td>
+            </tr>
+            <tr>
+                <td>Re-type Paswwrd</td>
+                <td><input type="password" id="repassword" required></td>
+                <td id="repass" style="color: red;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" id="register" Value="register" onclick="registration()"></td>
+            </tr>
+            
+        </table>
+        <div id="result" style="color: lightgreen;"></div>
+    </div>
+    <div>
+        <center>
+            <h2>Email Validation</h2><br><br>
+            <table>
+                <tr>
+                    <td>Email Id:</td>
+                    <td><input type="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" id="validate" onclick="Validation()" value="Validate"></td>
+                </tr>
+            </table><br>
+            <p id="result1" style="color:lightgreen"></p>
+            <p id="result2" style="color:red"></p>
+        </center>
+    </div>
+    <div>
+        <center>
+            <h3>Event selection</h3><br>
+            <label for="event">Select an Event :</label>
+            <select name="event" id="event" required onchange="eventSelect()">
+                <option value='' selected disabled>-Select-</option>
+                <option value="Corporate Event">Corporate Event</option>
+                <option value="Wedding Event">Wedding Event</option>
+            </select><br>
+            <h3 class="title"></h3><br>
+            <table>
+                <tr>
+                    <td>No.of days:</td>
+                    <td><input type="number" id="noOfDays" required></td>
+                </tr>
+                <tr>
+                    <td>State Date:</td>
+                    <td><input type="text" id="startDate" onfocus="(this.type='date')" required></td>
+                </tr>
+                <tr>
+                    <td>Organizer name:</td>
+                    <td><input type="text" id="organizer" required></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number:</td>
+                    <td><input type="number" id="mobile" required></td>
+                </tr>
+            </table><br>
+            <input type="submit" id="add" value="Add" onclick="addData()">   <input type="submit" id="display" value="Display" onclick="display()"><br><br>
+            <div id="output"></div>
+        </center>
+
+    </div>
+    
+</body>
+<script>
+    {
+        function registration(){
+            let name = document.getElementById("name").value;
+            let  password = String(document.getElementById("password").value);
+            let repassword = String(document.getElementById("repassword").value);
+            let re = new RegExp("^([a-zA-Z0-9!@#&*$%]{8,})$");
+
+          
+            if(password != repassword){
+                document.getElementById("repass").innerHTML = "Password and Re-type Password doesn't match";
+            }
+            else if(!re.test(password))
+            {
+                document.getElementById("pass").innerHTML = "Password must contain at least eight character with upper, lower and special doesn't match";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML = "Login Successful";
+            }
+
+        }
+
+        function Validation(){
+            let Email =String(document.getElementById("email").value);
+            let re = new RegExp("^([a-z0-9@]{8,})$");
+            let mail = /[a-b0-9@]/g;
+            if(Email.match(mail))
+            {
+                document.getElementById("result1").innerHTML = "Provided E-mail Id is Valid";
+            }
+            else
+            {
+                document.getElementById("result2").innerHTML = "Invalid E-mail. Please provide a valid e-mail id";
+            }
+        }
+
+        function eventSelect(){
+            let Event = String(document.getElementById("event").value);
+            document.getElementsByClassName("title")[0].innerHTML = Event;
+        }
+
+        const eventlist = [];
+        const noDaylist = [];
+        const startDaylist = [];
+        const organizerlist = [];
+        const mobilelist =[];
+        
+        function addData(){
+            let event = String(document.getElementById("event").value);
+            let noDay = Number(document.getElementById("noOfDays").value);
+            let startDay = Date(document.getElementById("startDate").value);
+            let organizer = String(document.getElementById("organizer").value);
+            let mobile = Number(document.getElementById("mobile").value);
+            
+            if(eventlist.push(event)&&
+            noDaylist.push(noDay) &&
+            startDaylist.push(startDay) &&
+            organizerlist.push(organizer) &&
+            mobilelist.push(mobile))
+            {
+                document.getElementById("output").innerHTML = "Data is added succesfully!";
+            }
+            console.log(eventlist,"",noDaylist,"",startDaylist);
+        }
+
+        function display(){
+            const table = `
+            <table>
+                <tr>
+                    <th>Events</th>
+                    <th>No.of Day</th>
+                    <th>Starting Date</th>
+                    <th>Organizer</th>
+                    <th>Mobile Number</th>                
+                </tr>\`
+                for( let i=0 ; i<eventlist.length;i++)
+                {
+                    <tr>
+                        <td>{\'eventlist[i]\'} </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                }
+            </table>`;
+            document.getElementsByClassName("table").innerHTML = table;
+                
+        }
+    };
+</script>
+</html>

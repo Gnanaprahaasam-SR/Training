@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise1</title>
+</head>
+
+<body onload="displayComment();">
+    <center>
+        <h1>Welcome Page</h1>
+        <table>
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" id="name" name="name" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" id="submit" value="Post" onclick="welcome()" ></td>
+            </tr>
+        </table>
+        <br>
+        <h2 id="output"></h2>
+        <hr><br><br>
+    
+        <h1 class="title" ></h1>
+        <h3 class="codes" ></h3><br>
+        <hr><br>
+        <h2>Addings the Events</h2>
+        <table>
+            <tr>
+                <td>Number of Wedding events</td>
+                <td><input type="number" id="WeddingEvent" name="first" required></td>
+            </tr>
+            <tr>
+                <td>Number of Corporate events</td>
+                <td><input type="number" id="CorporateEvent" name="second" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add" name="submit" id="add" onclick="add()"></td>
+            </tr>
+        </table>
+        <h3></h3>
+    </center>
+
+    
+</body>
+<script>
+    {
+        function welcome()
+        {
+            const value = document.getElementById("name");
+            document.getElementById("output").innerHTML="Welcome "+value.value;
+        }
+        // document.getElementsByTagName("body")[0].onload=function(){displayComment()};
+        function displayComment()
+        {
+            //Single line command
+            document.getElementsByClassName("title")[0].innerHTML="Single & Multi Line Comments";
+            /*   multiple line comment */
+            document.getElementsByClassName("codes")[0].innerHTML="Welcome!!!"
+        }
+        function add()
+        {
+            let weddingEvent = document.getElementById("WeddingEvent");
+            let corporate = document.getElementById("CorporateEvent");
+            let sum = Number( weddingEvent.value) + Number(corporate.value);
+            document.getElementsByTagName("h3")[1].innerHTML = sum;
+        }
+
+    }
+</script>
+</html>

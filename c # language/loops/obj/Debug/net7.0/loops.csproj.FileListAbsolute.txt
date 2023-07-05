@@ -1,0 +1,15 @@
+D:\Tnxt\Training\loops\bin\Debug\net7.0\loops.exe
+D:\Tnxt\Training\loops\bin\Debug\net7.0\loops.deps.json
+D:\Tnxt\Training\loops\bin\Debug\net7.0\loops.runtimeconfig.json
+D:\Tnxt\Training\loops\bin\Debug\net7.0\loops.dll
+D:\Tnxt\Training\loops\bin\Debug\net7.0\loops.pdb
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.csproj.AssemblyReference.cache
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.AssemblyInfoInputs.cache
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.AssemblyInfo.cs
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.csproj.CoreCompileInputs.cache
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.dll
+D:\Tnxt\Training\loops\obj\Debug\net7.0\refint\loops.dll
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.pdb
+D:\Tnxt\Training\loops\obj\Debug\net7.0\loops.genruntimeconfig.cache
+D:\Tnxt\Training\loops\obj\Debug\net7.0\ref\loops.dll

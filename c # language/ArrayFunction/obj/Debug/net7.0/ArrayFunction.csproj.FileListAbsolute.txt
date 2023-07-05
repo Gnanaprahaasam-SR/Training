@@ -1,0 +1,15 @@
+C:\backup\Training\ArrayFunction\bin\Debug\net7.0\ArrayFunction.exe
+C:\backup\Training\ArrayFunction\bin\Debug\net7.0\ArrayFunction.deps.json
+C:\backup\Training\ArrayFunction\bin\Debug\net7.0\ArrayFunction.runtimeconfig.json
+C:\backup\Training\ArrayFunction\bin\Debug\net7.0\ArrayFunction.dll
+C:\backup\Training\ArrayFunction\bin\Debug\net7.0\ArrayFunction.pdb
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.csproj.AssemblyReference.cache
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.GeneratedMSBuildEditorConfig.editorconfig
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.AssemblyInfoInputs.cache
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.AssemblyInfo.cs
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.csproj.CoreCompileInputs.cache
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.dll
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\refint\ArrayFunction.dll
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.pdb
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ArrayFunction.genruntimeconfig.cache
+C:\backup\Training\ArrayFunction\obj\Debug\net7.0\ref\ArrayFunction.dll

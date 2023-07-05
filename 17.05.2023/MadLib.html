@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title></title>
+ </head>
+ <body>
+ 
+ <h1>Mad Libs</h1>
+ 
+ <ul>
+  <li>Noun: <input type="text" id="noun"><br>
+  <li>Adjective: <input type="text" id="adjective">
+  <li>Someone's Name: <input type="text" id="person">
+ </ul>
+ 
+ <button id="lib-button" >Lib it!</button>
+  
+ <div id="story"></div>
+
+
+ <hr>
+ <br>
+ <input type="submit" id="change" value="Click to set paragraph background color" onclick="color()"><br>
+ <h4>JavaScript Exercises</h4>
+ <br>
+ <h4>Exercises</h4><br><hr>
+ <center>
+    <table id="form1" >
+        <tr>
+            <td>First name:</td>
+            <td><input type="text" id="name" name="name" required></td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input type="text" id="last" name="last" required></td>
+        </tr>
+        <tr>
+            <td><input type="submit"  name="submit"  value="Submit" onclick="getFormvalue()"></td>
+        </tr>
+    </table>
+ </center>
+    <hr>
+    <br>
+    <center>
+        <h1>Pink Frag Event Organizer</h1>
+    <table  border="1px">
+        <tr>
+            <th><center>Name</center></th>
+            <th><center>Venue</center></th>
+            <th><center>Date</center></th>
+            <th><center>Cost</center></th>
+        </tr>
+        <tr  onmouseover="row1(this)" onmouseout="none(this)">
+            <td>Wedding Planning</td>
+            <td>sri Plus thirumana Mahal</td>
+            <td>4.5.2018</td>
+            <td>500000</td>
+        </tr>
+        <tr  onmouseover="row2(this)" onmouseout="none(this)">
+            <td>Corporate Events</td>
+            <td>RVS Hall,2nd Floor</td>
+            <td>6.9.2018</td>
+            <td>50000</td>
+        </tr>
+        <tr  onmouseover="row3(this)" onmouseout="none(this)">
+            <td>Award Ceremonies</td>
+            <td>vivekanandha Auditorium</td>
+            <td>6.1.2018</td>
+            <td>300000</td>
+        </tr>
+        <tr onmouseover="row4(this)" onmouseout="none(this)">
+            <td>Gala Dinners</td>
+            <td>Paga Towers</td>
+            <td>11.3.2018</td>
+            <td>75000</td>
+        </tr>
+    </table>
+    </center>
+  
+ </body>
+ <script>
+    {
+        document.getElementById("lib-button").addEventListener("click",get);
+        function get(){
+            const noun = document.getElementById("noun").value;
+            const adjective = document.getElementById("adjective").value;
+            const name = document.getElementById("person").value;
+            const final = name+" "+adjective+"very much"+noun;
+            document.getElementById("story").innerHTML = final;            
+        }
+
+        function color()
+        {
+            document.getElementsByTagName("h4")[0].style.backgroundColor="red";
+            document.getElementsByTagName("h4")[1].style.backgroundColor="yellow";
+        }
+
+        function getFormvalue()
+        {
+            const name = document.getElementById("name").value;
+            const last = document.getElementById("last").Value;
+            var i=0;
+            if(i<name.length) 
+            {
+                console.log(name,"\n",last);             
+            }
+            i++;
+        }
+
+        function row1(obj)
+        {
+            obj.style.backgroundColor="#c8daf7";
+        }
+        function row2(obj)
+        {
+            obj.style.backgroundColor="#9df9ec";
+        }
+        function row3(obj)
+        {
+            obj.style.backgroundColor="#b2a0e8";
+        }
+        function row4(obj)
+        {
+            obj.style.backgroundColor="#d8a0e8";
+        }
+        function none(item)
+        {
+            item.style.backgroundColor="#ffff";            
+        }
+    }
+ </script>.
+</html>

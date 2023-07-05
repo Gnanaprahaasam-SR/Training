@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    {
+        function square()
+        {
+            let first = document.getElementById("first").value;
+            
+            const final= Number(first)*Number(first);
+            document.getElementById("value").innerHTML = "The result of squaring the number "+first+" is "+final;
+        }
+        function division()
+        {
+            let first = document.getElementById("first").value;
+            const final = Number(first)/2;
+            document.getElementById("value").innerHTML = "Half of "+first+" is "+final;
+        }
+        function percentage()
+        {
+            const first = document.getElementById("first").value;
+            const second = document.getElementById("second").value;
+            const final = (Number(first)*100)/(Number(second));
+            document.getElementById("value").innerHTML= first +" is "+final+"% of "+ second;
+        }
+
+        function area()
+        {
+            const first = document.getElementById("first").value;
+            const final = (Math.PI*(Number(first))**2).toFixed(2);
+            document.getElementById("value").innerHTML= "The area for a circle with radius "+first+" is "+ final;
+        }
+    }
+</script>
+<body>
+    <br>
+    <center>
+        <label for="number">Number1:</label>
+        <input type="number" id="first" name="first" required><br><br>
+        <label for="number2">Number2:</label>
+        <input type="number" id="second" name="second" required>
+        <br><br>
+        <input type="submit" id="square" onclick="square()" value="Square">
+        <input type="submit" id="half" onclick="division()" value="HalfNumber">
+        <input type="submit" id="percentage" onclick="percentage()" value="Percentage">
+        <input type="submit" id="Area" onclick="area()" value="Area">
+        <h4 id="value"></h4>
+    </center>
+</body>
+</html>

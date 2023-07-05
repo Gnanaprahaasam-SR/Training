@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Function</title>
+</head>
+<script>
+    {
+        var count=0;
+        function add()
+        {
+            count++;
+            document.getElementById("like").innerHTML="Likes:\""+count+"\"";
+        }
+        function sub()
+        {
+            count--;
+            document.getElementById("like").innerHTML="Likes:\""+count+"\"";
+        }
+
+        function choice()
+        {
+            let Event = document.getElementById("event").value;
+            if(Event){
+                document.getElementById("output").innerHTML = "Selected value is "+ Event;
+                document.getElementById("output").style.color = "green";
+            }
+            else 
+            {
+                document.getElementById("output").innerHTML = "No vlaue is selected";
+                document.getElementById("output").style.color = "red";
+            }
+        } 
+        let row = 0;
+        let arr=[];
+        
+        function addEvent(){
+
+            const name = String(document.getElementById("eventName").value);
+            const venue = String(document.getElementById("eventVenue").value);
+            const start = new Date(document.getElementById("SDate").value);
+            
+            const end = new Date(document.getElementById("EDate").value);
+            if(typeof(start) != "object")
+            {
+                document.getElementById("err1").innerHTML="Date formate is Wrong.";
+            }
+            if(typeof(end) != "object")
+            {
+                document.getElementById("err2").innerHTML="Date formate is wrong";
+            }
+            if(name != 0 && venue!= 0 && start != 0 && end != 0){
+                console.log("     "+typeof(arr));
+                arr.push(name);
+                arr.push(venue);
+                arr.push(start);
+                arr.push(end);
+                console.log(arr);
+            }
+
+
+        }
+        console.log(arr.length);
+        
+        function view()
+        {
+            if(arr.length>0)
+            {
+                document.getElementById("table").innerHTML="Data is viewed";
+            }
+            else{
+                document.getElementById("table").innerHTML = "No record is founded";
+            }
+
+        }
+    
+    }
+</script>
+<body>
+    <center>
+        <h1>EVENTS & PROMOTIONS</h1>
+        <br>
+        <img src="image4.jpg" alt="function" width="300px" height="300px">
+        <br>
+        <p>
+        <button id="add" onclick="add()"><i class="fa fa-thumbs-up"></i></button>
+        <button id="sub" onclick="sub()" ><i class="fa fa-thumbs-down"></i></button>
+
+        <h4 id="like"></h4></p>
+        <br>
+        <!-- select box -->
+        <hr>
+        <h2>Select box validation</h2>
+        <select name="function" id="event">
+            <option value=""  selected disabled >-select-</option>
+            <option value="CorporateEvents">CorporateEvents</option>
+            <option value="SupportEvents">SupportEvents</option>
+
+        </select><br><br>
+        <input type="submit" id="choice" value="Submit" onclick="choice()">
+        <br><br>
+        <div id="output"></div>
+
+        <!-- Event Schedule -->
+        <br>
+        <h2>Event Schedule</h2>
+        <br>
+        <table>
+            <tr>
+                <td>Event Name</td>
+                <td><input type="text" id="eventName" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Event Venue</td>
+                <td><input type="text" id="eventVenue" name="venue" required></td>
+            </tr>
+            <tr>
+                <td>Start Date</td>
+                <td><input type="text" id="SDate" name="start" required></td>
+                <td id="err1"></td>
+            </tr>
+            <tr>
+                <td>End Date</td>
+                <td><input type="text" id="EDate" name="end" required></td>
+                <td id="err2"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Add Event" id="add" onclick="addEvent()"><input type="submit" value="Display" id="view"onclick="view()">
+
+        <div id="table"></div>
+    </center>
+       
+</body>
+</html>

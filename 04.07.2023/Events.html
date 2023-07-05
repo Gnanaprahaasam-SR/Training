@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Event Handeling
+    </title>
+    <script>
+        function displayData() {
+            document.getElementById("demo").innerHTML = "Hi, Good morning  every one!";
+        }
+        function upperCase() {
+            const x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+        // function focus(x) {
+        //     const x = document.getElementById("fname");
+        //     x.style.background = "yellow";
+        // }
+        function checkCookies() {
+        var text = "";
+        if (navigator.cookieEnabled == true) {
+            text = "Cookies are enabled.";
+        } else {
+            text = "Cookies are not enabled.";
+        }
+        document.getElementById("example").innerHTML = text;
+        }
+    </script>
+</head>
+<body onload="checkCookies()">
+    <p id="demo" onmouseover="style.color='green'" onmouseout="style.color='red'"></p>
+    <br> <input type="submit" value="Submit" onclick="displayData()">
+    <hr>
+    Enter your name: <input type="text" id="fname" onchange="upperCase()" onfocus="focus(this)">
+    <p id="example" ></p>
+</body>
+</html>

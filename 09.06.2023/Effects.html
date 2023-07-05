@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+    {
+        $(document).ready(function(){
+            $("#fade-in").click(function(){
+                $("p#first").fadeIn();
+                $("p#second").fadeIn("slow");
+                $("p#third").fadeIn("fast");
+                $("p#four").fadeIn(3000);
+            });
+        });  
+
+        $(document).ready(function(){
+            $("#fade-out").click(function(){
+                $("p#first").fadeOut();
+                $("p#second").fadeOut("slow");
+                $("p#third").fadeOut("fast");
+                $("p#four").fadeOut(3000);
+            });
+        });
+        $(document).ready(function(){
+            $(".toggle").click(function(){
+                $("p,h1,[id]").toggle();
+            });
+        });
+        $(document).ready(function(){
+            $("#fadeTo").click(function(){
+                $("p:first").fadeTo("slow",0.5);
+                $("p#second").fadeTo("slow",0.7);
+                $("p#third").fadeTo("slow",0.9);
+                $("p#four").fadeTo("slow",1.0);
+            });
+        });
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideToggle(3000);
+                // $("#panel").slideDown(3000);
+            });
+            $("#stop").click(function(){
+                $("#panel").stop();
+            });
+        });
+        $(document).ready(function(){
+            $("button#animate").click(function(){
+                $("div").animate({width:'400px',fontSize:"24px"});
+                
+            });
+        });
+
+    }
+    </script>
+</head>
+<body>
+    <center >
+        <button class="toggle">Toggle the content</button>
+        <h1>Effects</h1>
+        <button id="fade-in">Fade-in</button>
+        <button id="fade-out">Fade-out</button>
+        <p id="first">This content will be fade-out/ fade-in with in a time</p><br>
+        <p id="second">This content will be fade-out/ fade-in slow manner</p><br>
+        <p id="third">This content will be fade-out/fade-in fast manner</p><br>
+        <p id="four">This content apper after 3000 microsecond</p><br>
+        <button id="fadeTo">FadeTo</button>
+    </center>
+    <center ><br>
+        <button id="stop">click to stop slide</button>
+        <h1 id="flip" style="background-color: rgb(186, 137, 232);padding: 5px;">Slide show</h1><hr>
+        <p id="panel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis ipsam tempora illum eligendi laboriosam cum aliquid placeat ratione? Voluptatem cupiditate deserunt expedita voluptate eos quam atque ut saepe distinctio.</p>
+    </center>
+    <center>
+        <h1>Animation effect</h1>
+        <button id="animate">click to animate</button>
+    </center>
+    <div style="background-color: blue; width: 200px; height: 200px;position: absolute;">Hello</div>
+</body>
+</html>

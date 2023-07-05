@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("p:first").hide();
+        })
+    });
+    $(document).ready(function(){
+        $(".hide1").click(function(){
+            $(this).hide();
+        });
+    })
+    $(document).ready(function(){
+        $("#show").click(function(){
+            $("p:first").show();
+        });
+    })
+    $(document).ready(function(){
+        $("#para").click(function(){
+            $("p.data").hide();
+        });
+    })
+    $(document).ready(function(){
+        $("button.toggle").click(function(){
+            $("p,h2,[id]").toggle();
+        });
+    })
+    </script>
+</head>
+<body>
+    <center>
+        <button class="toggle">Click me to togggle the content</button>
+        <h2>Hellow world!</h2>
+        <p>In this example , we discuse about jquery selector</p>
+        <br>
+        <button id="hide">click me to hide</button>
+        <button id="show">click me to show</button>
+    </center>
+    <center>
+        <h2>Using this key to hide element</h2>
+        <p class="data">In this example , we discuse about jquery selector</p>
+        <br>
+        <button class="hide1">click me hide this</button>
+        <button id="para">click me to hide p tag class name</button>
+    </center>
+
+
+    
+</body>
+</html>

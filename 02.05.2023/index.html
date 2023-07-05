@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script>        
+    {
+        $(document).ready(function(){
+            $("h5").on({
+                mouseenter:function(){
+                    $(this).css("background-color","lightgray");
+                },
+                mouseleave:function(){
+                    $(this).css("background-color","lightblue");
+                },
+                click:function(){
+                    $(this).css("background-color","yellow");
+                },               
+            });          
+    
+        });
+
+        $(document).ready(function(){
+            $("p:first").hover(function(){
+                alert ("Hi your are placed in alert line");
+            });
+
+        });
+
+        $(document).ready(function(){
+            $("input").focus(function(){
+                $(this).css("background-color","yellow");
+            });
+            $("input").blur(function(){
+                $(this).css("background-color","lightgreen");
+            });
+        })
+    }       
+    </script>
+</head>
+<body>
+    <div>
+        <center>
+            <h5 class="title">click or move the mouse pointer over this paragraph</h5>
+            <p id="line">when you hover this line alert message occured</p>
+        </center>
+        <br>
+        <center>
+            Name:<input type="text" id="name" class="name"><br><br>
+            Email: <input type="email" id="email" class="email">
+        </center>
+    </div>
+
+    
+</body>
+
+</html>

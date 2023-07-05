@@ -1,0 +1,41 @@
+h2{
+    font-size: 18px !important;
+    /* color: red !important; */
+}
+h3{
+    font-size: 16px !important;
+    /* color: rgb(54, 222, 54); */
+}
+h5{
+    font-size: 14px !important;
+    /* color: rgb(174, 107, 236); */
+}
+p{
+    font-size: 10px !important;
+    /* background-color: rgb(155, 199, 243);
+    color: rgb(187, 4, 196) !important; */
+}
+
+.address h2{
+    color:rgb(222, 222, 13) !important;    
+}
+.address{
+    background-color: rgb(124, 242, 212);
+    color: rgb(56, 56, 143) !important;
+}
+h1{
+    color: rgb(232, 79, 209);
+}
+body{
+    background-image: url("leaf.jpg") !important;
+}
+
+body .image{
+    padding-left: 20%;
+    padding-right: 20%;
+    column-count: 2;
+    column-gap: 50px;
+}
+ body .image #img2{
+    filter: grayscale(100%);
+ }
