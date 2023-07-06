@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Partices</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        {
+            $(document).ready(function(){
+                $("#info").click(function(){
+                    $(this).hide();
+                });
+            });
+
+            $(document).ready(function(){               
+                $("p.content").mouseenter(function(){
+                    alert("mouse-enter into function;")
+                });              
+            });
+            $(document).ready(function(){               
+                $("p#line").mouseleave(function(){
+                    alert("mouse-leave into function;")
+                });              
+            });
+
+            $(document).ready(function(){
+                $("input.name").focus(function(){
+                    $(this).css("background-color","yellow");
+                });
+                $("input.name").blur(function(){
+                    $(this).css("background-color","green");
+                });
+            });
+            $(document).ready(function(){
+                $("h4").on({
+                    mouseenter: function(){
+                    $(this).css("background-color", "lightgray");
+                    },  
+                    mouseleave: function(){
+                    $(this).css("background-color", "lightblue");
+                    }, 
+                    click: function(){
+                    $(this).css("background-color", "yellow");
+                    }  
+                });
+            });
+
+            $(document).ready(function()
+            {
+                $("#submit").click(function(){
+                    $("div#content").toggle();
+                });
+                $("input#animation").click(function()
+                {
+                    $("div#box").animate({left:"250px"});
+                })
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <div>
+            <p id="info">Hi every one</p>
+            <p class="content" id="line">Using mouseEnter function</p>
+            <br><input type="text" class="name" />
+            <h4>Click or move the mouse pointer over this paragraph.</h4>
+        </div>
+        <hr>
+        <input type="submit" value="toggle the content" id="submit">
+        <div id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, molestiae tempore similique labore tenetur quis adipisci eius ipsam impedit saepe distinctio sint perspiciatis repellat laborum. Dolorem inventore consequuntur quidem architecto?
+        </div><br><hr>
+
+        <input type="submit" id="animation" value="Animate">
+        <div style="background-color: blueviolet; width: 200px; height: 200px; position: absolute;" id="box"></div>
+    </center>
+    
+</body>
+</html>
